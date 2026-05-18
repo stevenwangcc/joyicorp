@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>聯繫資訊｜謙溢管理顧問 Joyi Corp</title>
+  <meta name="description" content="預約謙溢管理顧問免費初次諮詢（30 分鐘），或透過表單、Email 與我們聯繫，討論企業管理顧問與 AI 人機協作方案的需求。" />
+  <meta name="keywords" content="聯繫謙溢管理顧問, 免費諮詢, 企業管理顧問諮詢, AI 導入諮詢, 預約諮詢" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.joyicorp.com/contact.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.joyicorp.com/contact.html" />
+  <meta property="og:title"       content="聯繫資訊｜謙溢管理顧問 Joyi Corp" />
+  <meta property="og:description" content="預約謙溢管理顧問免費初次諮詢，與我們討論企業管理與 AI 轉型的需求。" />
+  <meta property="og:site_name"   content="謙溢管理顧問 Joyi Corp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="聯繫資訊｜謙溢管理顧問 Joyi Corp" />
+  <meta name="twitter:description" content="預約謙溢管理顧問免費初次諮詢（30 分鐘）。" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Navbar (動態插入) -->
+<div id="navbar-placeholder"></div>
+
+
+<!-- ===================================================
+     Page Header
+     =================================================== -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="breadcrumb">
+      <a href="index.html">首頁</a> &rsaquo; 聯繫資訊
+    </div>
+    <h1>聯繫資訊</h1>
+    <p>初次諮詢免費（30 分鐘），立即預約，讓我們為您的企業找到最佳方案！</p>
+  </div>
+</header>
+
+
+<!-- ===================================================
+     Contact Section
+     =================================================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- ── Contact Form ── -->
+      <div>
+        <div class="form-section-title">
+          <i class="fas fa-paper-plane" style="color:var(--accent);margin-right:10px;"></i>填寫諮詢表單
+        </div>
+
+        <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  Formspree 表單說明                                      ║
+          ║  1. 前往 https://formspree.io 免費註冊帳號               ║
+          ║  2. 建立新表單，取得您的 Form ID（格式：xxxxxxxx）       ║
+          ║  3. 將下方 action 中的 YOUR_FORM_ID 替換為您的 Form ID   ║
+          ║     例如：https://formspree.io/f/abcd1234               ║
+          ╚══════════════════════════════════════════════════════════╝
+        -->
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xvzyowwr"
+          method="POST"
+          novalidate
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">姓名<span class="req">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="請輸入您的姓名"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="company">公司名稱<span class="req">*</span></label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="form-control"
+                placeholder="請輸入公司名稱"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">聯絡電話</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="例：0912-345-678"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">電子郵件<span class="req">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="_replyto"
+                class="form-control"
+                placeholder="example@company.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">諮詢主題<span class="req">*</span></label>
+            <select id="topic" name="topic" class="form-control" required>
+              <option value="" disabled selected>請選擇諮詢主題</option>
+              <option value="企業管理顧問">企業管理顧問</option>
+              <option value="AI 人機協作方案">AI 人機協作方案</option>
+              <option value="策略諮詢">策略諮詢</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">諮詢內容<span class="req">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              rows="5"
+              placeholder="請簡述您的企業背景、目前面臨的挑戰或想了解的服務內容，讓我們能在諮詢前有所準備。"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Formspree 防垃圾郵件設定 -->
+          <input type="hidden" name="_subject" value="【謙溢管理顧問】新諮詢表單" />
+          <input type="text" name="_gotcha" style="display:none;" />
+
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>送出諮詢
+          </button>
+
+        </form>
+
+        <!-- 表單送出成功訊息 -->
+        <div id="form-success" class="success-msg" role="alert">
+          <i class="fas fa-check-circle" style="font-size:1.3rem;color:#2e7d32;flex-shrink:0;"></i>
+          <span>
+            <strong>感謝您的留言！</strong><br>
+            我們已收到您的諮詢，將於 1–2 個工作天內與您聯繫。
+          </span>
+        </div>
+
+      </div><!-- /form column -->
+
+
+      <!-- ── Contact Info Panel ── -->
+      <div>
+        <div class="contact-info-panel">
+          <div class="info-panel-title">
+            <i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:8px;"></i>聯繫資訊
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-text">
+              <div class="lbl">電子郵件</div>
+              <div class="val">
+                <a href="mailto:stevenwang.cc@gmail.com">stevenwang.cc@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-text">
+              <div class="lbl">聯絡電話</div>
+              <div class="val">（待補）</div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-text">
+              <div class="lbl">辦公地址</div>
+              <div class="val">（待補）</div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-text">
+              <div class="lbl">服務時間</div>
+              <div class="val">週一至週五<br>9:00 – 18:00</div>
+            </div>
+          </div>
+
+          <div class="info-cta-box">
+            <div class="cta-tag">限時優惠</div>
+            <p>
+              <strong>初次諮詢完全免費（30 分鐘）</strong><br>
+              讓我們先了解您的企業現況，<br>
+              再為您規劃最適合的方案。
+            </p>
+          </div>
+        </div>
+      </div><!-- /info panel -->
+
+    </div><!-- /contact-grid -->
+  </div>
+</section>
+
+
+<!-- ===================================================
+     CTA Banner
+     =================================================== -->
+<section class="cta-section">
+  <div class="container">
+    <h2>不確定從哪裡開始？</h2>
+    <p>
+      初次諮詢沒有任何壓力，我們會先聽您說，
+      再告訴您謙溢能如何協助您的企業。
+    </p>
+    <a href="mailto:stevenwang.cc@gmail.com" class="btn btn-accent-full">
+      <i class="fas fa-envelope"></i>&ensp;直接寫信給我們
+    </a>
+  </div>
+</section>
+
+
+<!-- Footer (動態插入) -->
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
