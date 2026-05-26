@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1A3A5C"/>
+
+  <!-- Decorative radial glow (top-left) -->
+  <radialGradient id="glow1" cx="20%" cy="30%" r="50%">
+    <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+
+  <!-- Decorative radial glow (bottom-right) -->
+  <radialGradient id="glow2" cx="80%" cy="80%" r="45%">
+    <stop offset="0%" stop-color="#1e4a7a" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Decorative corner lines -->
+  <line x1="60" y1="60" x2="180" y2="60" stroke="#C9A84C" stroke-width="2" opacity="0.3"/>
+  <line x1="60" y1="60" x2="60" y2="140" stroke="#C9A84C" stroke-width="2" opacity="0.3"/>
+  <line x1="1140" y1="570" x2="1020" y2="570" stroke="#C9A84C" stroke-width="2" opacity="0.3"/>
+  <line x1="1140" y1="570" x2="1140" y2="490" stroke="#C9A84C" stroke-width="2" opacity="0.3"/>
+
+  <!-- Gold accent bar -->
+  <rect x="500" y="288" width="200" height="3" rx="1.5" fill="#C9A84C"/>
+
+  <!-- Main brand name -->
+  <text
+    x="600"
+    y="270"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="96"
+    font-weight="700"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="6">Joyi Corp</text>
+
+  <!-- Subtitle -->
+  <text
+    x="600"
+    y="360"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="30"
+    font-weight="400"
+    fill="#C9A84C"
+    text-anchor="middle"
+    letter-spacing="1.5">AI &amp; Management Consulting for SMEs</text>
+
+  <!-- Domain -->
+  <text
+    x="600"
+    y="430"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="18"
+    fill="#FFFFFF"
+    fill-opacity="0.4"
+    text-anchor="middle"
+    letter-spacing="1">www.joyicorp.com</text>
+</svg>

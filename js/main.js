@@ -2,24 +2,53 @@
    謙溢管理顧問 Joyi Corp — Shared Components (Navbar & Footer)
    ================================================================ */
 
-const NAVBAR_HTML = `
+const _isEN = window.location.pathname.includes('/en/');
+
+const NAVBAR_ZH = `
 <nav class="navbar" id="navbar">
   <div class="navbar-inner">
-    <a href="index.html" class="navbar-logo">謙溢<span>管理顧問</span></a>
+    <a href="/" class="navbar-logo">謙溢<span>管理顧問</span></a>
     <button class="navbar-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
     <ul class="navbar-links" id="navLinks" role="list">
-      <li><a href="index.html">首頁</a></li>
-      <li><a href="services.html">服務項目</a></li>
-      <li><a href="cases.html">顧客實績</a></li>
-      <li><a href="contact.html">聯繫資訊</a></li>
+      <li><a href="/">首頁</a></li>
+      <li><a href="/services.html">服務項目</a></li>
+      <li><a href="/cases.html">顧客實績</a></li>
+      <li><a href="/contact.html">聯繫資訊</a></li>
+      <li class="lang-item">
+        <a href="/" class="lang-btn lang-active lang-zh-link">繁中</a>
+        <span class="lang-sep">｜</span>
+        <a href="/en/" class="lang-btn lang-en-link">EN</a>
+      </li>
     </ul>
   </div>
 </nav>
 `;
 
-const FOOTER_HTML = `
+const NAVBAR_EN = `
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/en/" class="navbar-logo">Joyi<span> Corp</span></a>
+    <button class="navbar-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="navbar-links" id="navLinks" role="list">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/services.html">Services</a></li>
+      <li><a href="/en/cases.html">Client Results</a></li>
+      <li><a href="/en/contact.html">Contact</a></li>
+      <li class="lang-item">
+        <a href="/" class="lang-btn lang-zh-link">繁中</a>
+        <span class="lang-sep">｜</span>
+        <a href="/en/" class="lang-btn lang-active lang-en-link">EN</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+const FOOTER_ZH = `
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
@@ -39,25 +68,62 @@ const FOOTER_HTML = `
 </footer>
 `;
 
+const FOOTER_EN = `
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-text">Joyi<span> Corp</span></div>
+        <div class="footer-logo-sub">AI &amp; Management Consulting for SMEs</div>
+      </div>
+      <div class="footer-meta">
+        <div><i class="fas fa-envelope" style="color:var(--accent);margin-right:6px;"></i><a href="mailto:stevenwang.cc@gmail.com">stevenwang.cc@gmail.com</a></div>
+        <div class="sep"><i class="fas fa-clock" style="color:var(--accent);margin-right:6px;"></i>Mon–Fri 9:00–18:00 (GMT+8)</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Joyi Corp. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+`;
+
+/* Map page filename → language-specific paths */
+const PAGE_MAP = {
+  'index.html':    { zh: '/',                  en: '/en/' },
+  '':              { zh: '/',                  en: '/en/' },
+  'services.html': { zh: '/services.html',     en: '/en/services.html' },
+  'cases.html':    { zh: '/cases.html',        en: '/en/cases.html' },
+  'contact.html':  { zh: '/contact.html',      en: '/en/contact.html' },
+};
+
 document.addEventListener('DOMContentLoaded', function () {
 
   /* --- Inject Navbar --- */
   const navPlaceholder = document.getElementById('navbar-placeholder');
   if (navPlaceholder) {
-    navPlaceholder.outerHTML = NAVBAR_HTML;
+    navPlaceholder.outerHTML = _isEN ? NAVBAR_EN : NAVBAR_ZH;
   }
 
   /* --- Inject Footer --- */
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
-    footerPlaceholder.outerHTML = FOOTER_HTML;
+    footerPlaceholder.outerHTML = _isEN ? FOOTER_EN : FOOTER_ZH;
   }
 
+  /* --- Set Language Switcher Links dynamically --- */
+  const slug     = window.location.pathname.split('/').pop() || 'index.html';
+  const langMap  = PAGE_MAP[slug] || PAGE_MAP['index.html'];
+  const zhLink   = document.querySelector('.lang-zh-link');
+  const enLink   = document.querySelector('.lang-en-link');
+  if (zhLink) zhLink.setAttribute('href', langMap.zh);
+  if (enLink) enLink.setAttribute('href', langMap.en);
+
   /* --- Highlight Active Nav Link --- */
-  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.navbar-links a').forEach(function (link) {
-    const href = link.getAttribute('href');
-    if (href === currentFile || (currentFile === '' && href === 'index.html')) {
+  document.querySelectorAll('.navbar-links a:not(.lang-btn)').forEach(function (link) {
+    const href     = link.getAttribute('href') || '';
+    const linkSlug = href.split('/').pop() || 'index.html';
+    if (linkSlug === slug) {
       link.classList.add('active');
     }
   });
@@ -74,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
         : '<i class="fas fa-bars"></i>';
     });
 
-    /* Close menu when a link is clicked */
     links.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         links.classList.remove('open');
@@ -88,11 +153,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     if (navbar) {
-      if (window.scrollY > 10) {
-        navbar.style.boxShadow = '0 3px 18px rgba(0,0,0,0.35)';
-      } else {
-        navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.25)';
-      }
+      navbar.style.boxShadow = window.scrollY > 10
+        ? '0 3px 18px rgba(0,0,0,0.35)'
+        : '0 2px 12px rgba(0,0,0,0.25)';
     }
   });
 
@@ -104,10 +167,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const submitBtn = contactForm.querySelector('.btn-submit');
       const successEl = document.getElementById('form-success');
 
-      /* Show loading state */
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = '傳送中…';
+        submitBtn.textContent = _isEN ? 'Sending…' : '傳送中…';
       }
 
       fetch(contactForm.action, {
@@ -123,16 +185,20 @@ document.addEventListener('DOMContentLoaded', function () {
               successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
           } else {
-            alert('送出失敗，請稍後再試或直接來信 stevenwang.cc@gmail.com');
+            alert(_isEN
+              ? 'Submission failed. Please try again or email stevenwang.cc@gmail.com'
+              : '送出失敗，請稍後再試或直接來信 stevenwang.cc@gmail.com');
           }
         })
         .catch(function () {
-          alert('網路錯誤，請稍後再試或直接來信 stevenwang.cc@gmail.com');
+          alert(_isEN
+            ? 'Network error. Please try again or email stevenwang.cc@gmail.com'
+            : '網路錯誤，請稍後再試或直接來信 stevenwang.cc@gmail.com');
         })
         .finally(function () {
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = '送出諮詢';
+            submitBtn.textContent = _isEN ? 'Send Message' : '送出諮詢';
           }
         });
     });

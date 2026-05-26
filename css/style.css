@@ -958,6 +958,42 @@ select.form-control {
 
 
 /* ================================================================
+   LANGUAGE SWITCHER
+   ================================================================ */
+.lang-item {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.lang-sep {
+  color: rgba(255,255,255,0.3);
+  margin: 0 5px;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.navbar-links .lang-btn {
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding-bottom: 0;
+  border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.03em;
+}
+
+.navbar-links .lang-btn:hover {
+  color: var(--accent);
+  border-bottom-color: transparent;
+}
+
+.navbar-links .lang-btn.lang-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+
+/* ================================================================
    RESPONSIVE
    ================================================================ */
 @media (max-width: 900px) {
@@ -986,6 +1022,21 @@ select.form-control {
   }
   .navbar-links li:last-child a { border-bottom: none; }
   .navbar-toggle { display: block; }
+
+  /* Language switcher mobile */
+  .lang-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-left: 0;
+  }
+  .navbar-links li.lang-item:last-child { border-bottom: none; }
+  .navbar-links .lang-btn {
+    padding: 0;
+    border-bottom: none;
+  }
+  .navbar-links .lang-btn.lang-active {
+    border-bottom: none;
+  }
 
   .hero { padding: 120px 20px 80px; }
   .hero::after { display: none; }
