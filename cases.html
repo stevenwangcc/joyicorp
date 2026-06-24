@@ -33,6 +33,97 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Carousel ── */
+    .carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    .carousel::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .carousel-track {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      transition: transform 0.45s ease;
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(26, 58, 92, 0.55);
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover { background: rgba(26, 58, 92, 0.9); }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    /* dots */
+    .carousel-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      z-index: 10;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: #C9A84C; }
+
+    /* card title in header */
+    .case-card-title {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    /* result text below carousel */
+    .case-result-text {
+      color: var(--text);
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
 
@@ -67,99 +158,114 @@
 
     <div class="cases-grid">
 
-      <!-- Case 1 -->
+      <!-- Case 1：企業網站設計 -->
       <div class="case-card">
         <div class="case-card-header">
           <span class="case-num">案例 01</span>
-          <span class="case-industry-badge">（待補）</span>
+          <span class="case-card-title">企業網站設計</span>
+          <span class="case-industry-badge">網站設計</span>
         </div>
+
+        <!-- Carousel -->
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/cases/web-design-1.jpg" alt="企業網站設計成果 1" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/web-design-2.jpg" alt="企業網站設計成果 2" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/web-design-3.jpg" alt="企業網站設計成果 3" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/web-design-4.jpg" alt="企業網站設計成果 4" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/web-design-5.jpg" alt="企業網站設計成果 5" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="上一張"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" aria-label="下一張"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots"></div>
+        </div>
+
         <div class="case-card-body">
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-exclamation-circle"></i>面臨挑戰
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-exclamation-circle"></i>面臨挑戰</div>
+            <div class="case-content">中小企業經費有限，不易自行聘僱資訊專業人員，網站建置與維護成為一大負擔。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-lightbulb"></i>解決方案
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-lightbulb"></i>解決方案</div>
+            <div class="case-content">提供專業網站設計、每月網站維護服務，並依企業營運狀況提供管理建議。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-chart-bar"></i>具體成果
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-chart-bar"></i>具體成果</div>
+            <div class="case-result-text">協助企業建立專業形象網站，提升品牌信任度，降低長期資訊維護成本。<br><span style="color:#b0b0b0;font-size:0.85rem;">（詳細成效數據將於後續更新）</span></div>
           </div>
-
         </div>
       </div>
 
-      <!-- Case 2 -->
+      <!-- Case 2：企業市場經營、會議資訊 -->
       <div class="case-card">
         <div class="case-card-header">
           <span class="case-num">案例 02</span>
-          <span class="case-industry-badge">（待補）</span>
+          <span class="case-card-title">企業市場經營・會議資訊</span>
+          <span class="case-industry-badge">市場分析</span>
         </div>
+
+        <!-- Carousel -->
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/cases/weekly-report-1.jpg" alt="週報生成器成果 1" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/weekly-report-2.jpg" alt="週報生成器成果 2" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/weekly-report-3.jpg" alt="週報生成器成果 3" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/weekly-report-4.jpg" alt="週報生成器成果 4" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="上一張"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" aria-label="下一張"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots"></div>
+        </div>
+
         <div class="case-card-body">
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-exclamation-circle"></i>面臨挑戰
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-exclamation-circle"></i>面臨挑戰</div>
+            <div class="case-content">市場經營變化快速，人員身兼多職，重要資訊彙整與會議報告耗費大量時間。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-lightbulb"></i>解決方案
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-lightbulb"></i>解決方案</div>
+            <div class="case-content">提供專業市場分析、重要會議報告整理，並建立定期資料自動生成系統。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-chart-bar"></i>具體成果
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-chart-bar"></i>具體成果</div>
+            <div class="case-result-text">協助企業建立週報自動化生成流程，大幅減少人工彙整時間，提升決策效率。<br><span style="color:#b0b0b0;font-size:0.85rem;">（詳細成效數據將於後續更新）</span></div>
           </div>
-
         </div>
       </div>
 
-      <!-- Case 3 -->
+      <!-- Case 3：社群網站經營 -->
       <div class="case-card">
         <div class="case-card-header">
           <span class="case-num">案例 03</span>
-          <span class="case-industry-badge">（待補）</span>
+          <span class="case-card-title">社群網站經營</span>
+          <span class="case-industry-badge">社群經營</span>
         </div>
+
+        <!-- Carousel -->
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/cases/fb-page-1.jpg" alt="社群經營成果 1" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/fb-page-2.jpg" alt="社群經營成果 2" loading="lazy"></div>
+            <div class="carousel-slide"><img src="images/cases/fb-page-3.jpg" alt="社群經營成果 3" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="上一張"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" aria-label="下一張"><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-dots"></div>
+        </div>
+
         <div class="case-card-body">
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-exclamation-circle"></i>面臨挑戰
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-exclamation-circle"></i>面臨挑戰</div>
+            <div class="case-content">新世代潮流趨勢變化快速，社群網站維護與內容建立需要持續投入。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-lightbulb"></i>解決方案
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-lightbulb"></i>解決方案</div>
+            <div class="case-content">提供自動化流程抓取社群網站資料，並協助規劃內容設計方向。</div>
           </div>
-
           <div class="case-row">
-            <div class="case-label">
-              <i class="fas fa-chart-bar"></i>具體成果
-            </div>
-            <div class="case-content case-pending">（待補）</div>
+            <div class="case-label"><i class="fas fa-chart-bar"></i>具體成果</div>
+            <div class="case-result-text">協助企業建立穩定的社群內容產出機制，提升品牌在社群平台的曝光與互動。<br><span style="color:#b0b0b0;font-size:0.85rem;">（詳細成效數據將於後續更新）</span></div>
           </div>
-
         </div>
       </div>
 
@@ -228,5 +334,49 @@
 <div id="footer-placeholder"></div>
 
 <script src="js/main.js"></script>
+<script>
+(function () {
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    var dotsContainer = carousel.querySelector('.carousel-dots');
+    var prevBtn = carousel.querySelector('.carousel-btn.prev');
+    var nextBtn = carousel.querySelector('.carousel-btn.next');
+    var total = slides.length;
+    var current = 0;
+    var timer = null;
+
+    // build dots
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', '第 ' + (i + 1) + ' 張');
+      dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + total) % total;
+      track.style.transform = 'translateX(-' + current * 100 + '%)';
+      carousel.querySelectorAll('.carousel-dot').forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+    nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+
+    function startTimer() {
+      timer = setInterval(function () { goTo(current + 1); }, 3000);
+    }
+    function resetTimer() { clearInterval(timer); startTimer(); }
+
+    carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+    carousel.addEventListener('mouseleave', function () { startTimer(); });
+
+    startTimer();
+  });
+})();
+</script>
 </body>
 </html>
