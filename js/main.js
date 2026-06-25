@@ -121,10 +121,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (enLink) enLink.setAttribute('href', langMap.en);
 
   /* --- Highlight Active Nav Link --- */
+  const path = window.location.pathname;
   document.querySelectorAll('.navbar-links a:not(.lang-btn)').forEach(function (link) {
-    const href     = link.getAttribute('href') || '';
-    const linkSlug = href.split('/').pop() || 'index.html';
-    if (linkSlug === slug) {
+    const href = link.getAttribute('href') || '';
+    const isRoot = href === '/' || href === '/en/';
+    if (isRoot ? path === href : href && path.startsWith(href)) {
       link.classList.add('active');
     }
   });
