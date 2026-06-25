@@ -38,6 +38,7 @@ const NAVBAR_EN = `
       <li><a href="/en/">Home</a></li>
       <li><a href="/en/services.html">Services</a></li>
       <li><a href="/en/cases.html">Client Results</a></li>
+      <li><a href="/en/blog/">Knowledge Base</a></li>
       <li><a href="/en/contact.html">Contact</a></li>
       <li class="lang-item">
         <a href="/" class="lang-btn lang-zh-link">繁中</a>
