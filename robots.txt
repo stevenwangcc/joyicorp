@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# 封鎖舊 WordPress 系統路徑
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-*.php
+Disallow: /xmlrpc.php
+
+# 封鎖舊 WordPress 內容路徑
+Disallow: /category/
+Disallow: /news/page/
+Disallow: /tag/
+
+Sitemap: https://joyicorp.com/sitemap.xml
