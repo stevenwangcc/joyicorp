@@ -15,6 +15,7 @@ const NAVBAR_ZH = `
       <li><a href="/">首頁</a></li>
       <li><a href="/services.html">服務項目</a></li>
       <li><a href="/cases.html">顧客實績</a></li>
+      <li><a href="/blog/">知識庫</a></li>
       <li><a href="/contact.html">聯繫資訊</a></li>
       <li class="lang-item">
         <a href="/" class="lang-btn lang-active lang-zh-link">繁中</a>
