@@ -125,8 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const path = window.location.pathname;
   document.querySelectorAll('.navbar-links a:not(.lang-btn)').forEach(function (link) {
     const href = link.getAttribute('href') || '';
-    const isRoot = href === '/' || href === '/en/';
-    if (isRoot ? path === href : href && path.startsWith(href)) {
+    if (href && href === path) {
       link.classList.add('active');
     }
   });
