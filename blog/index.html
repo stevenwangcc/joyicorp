@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>知識庫｜謙溢管理顧問 — AI 導入與數位轉型文章</title>
+  <meta name="description" content="謙溢管理顧問知識庫，提供台灣中小企業 AI 導入、數位轉型、SEO 優化的實用指南與案例分析。" />
+  <link rel="canonical" href="https://joyicorp.com/blog/" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2b4a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --bg: #f8f7f4;
+      --white: #ffffff;
+      --text: #2c2c2c;
+      --text-muted: #6b6b6b;
+      --border: #e2ddd6;
+    }
+    body { font-family: 'Noto Sans TC', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    nav {
+      background: var(--navy); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { color: var(--gold); font-size: 1.1rem; font-weight: 700; text-decoration: none; letter-spacing: .05em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .hero { background: var(--navy); color: var(--white); padding: 56px 5% 48px; text-align: center; }
+    .hero-tag {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+      padding: 4px 14px; border-radius: 2px; margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 12px; }
+    .hero p { color: rgba(255,255,255,.6); font-size: .95rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 56px 5% 80px; }
+
+    .section-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 28px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .article-grid { display: grid; gap: 24px; }
+
+    .article-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 32px 36px;
+      display: flex; gap: 28px; align-items: flex-start;
+      text-decoration: none; color: inherit;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .article-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+
+    .card-num {
+      font-size: 2.5rem; font-weight: 700; color: var(--border);
+      line-height: 1; min-width: 48px; padding-top: 4px;
+    }
+    .card-body { flex: 1; }
+    .card-tag {
+      display: inline-block; background: #f0ece3; color: var(--navy);
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+      padding: 3px 10px; border-radius: 2px; margin-bottom: 10px;
+    }
+    .card-title { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .card-desc { font-size: .9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+    .card-meta { font-size: .8rem; color: var(--text-muted); display: flex; gap: 16px; }
+    .card-arrow { color: var(--gold); font-size: 1.2rem; padding-top: 4px; }
+
+    .coming-soon {
+      background: var(--white); border: 1px dashed var(--border);
+      border-radius: 10px; padding: 28px 36px;
+      display: flex; gap: 28px; align-items: center; opacity: .6;
+    }
+    .coming-soon .card-num { font-size: 2rem; }
+    .coming-soon-label { font-size: .8rem; color: var(--text-muted); font-style: italic; }
+
+    .cta-banner {
+      background: var(--navy); border-radius: 10px;
+      padding: 40px; text-align: center; margin-top: 56px; color: var(--white);
+    }
+    .cta-banner h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .cta-banner p { color: rgba(255,255,255,.6); font-size: .9rem; margin-bottom: 24px; }
+    .btn {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-weight: 700; padding: 12px 32px; border-radius: 4px;
+      text-decoration: none; font-size: .95rem; transition: background .2s;
+    }
+    .btn:hover { background: var(--gold-light); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,.5); text-align: center; padding: 24px; font-size: .8rem; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-card { flex-direction: column; gap: 12px; padding: 24px 20px; }
+      .card-num { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://joyicorp.com/" class="nav-logo">謙溢管理顧問</a>
+  <ul class="nav-links">
+    <li><a href="https://joyicorp.com/">首頁</a></li>
+    <li><a href="https://joyicorp.com/services.html">服務項目</a></li>
+    <li><a href="https://joyicorp.com/cases.html">成功案例</a></li>
+    <li><a href="https://joyicorp.com/blog/" class="active">知識庫</a></li>
+    <li><a href="https://joyicorp.com/contact.html">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">KNOWLEDGE BASE</div>
+  <h1>知識庫</h1>
+  <p>AI 導入 · 數位轉型 · SEO 優化 · 中小企業管理實務</p>
+</div>
+
+<div class="container">
+  <div class="section-label">最新文章</div>
+
+  <div class="article-grid">
+
+    <!-- 文章 1 -->
+    <a href="https://joyicorp.com/blog/ai-guide-for-sme.html" class="article-card">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <span class="card-tag">AI 導入</span>
+        <div class="card-title">台灣中小企業導入 AI 前，老闆必知的 5 個問題</div>
+        <div class="card-desc">許多老闆對 AI 充滿期待，卻不知從何開始。本文整理 5 個關鍵問題，幫助你在導入前想清楚方向，避免走冤枉路。</div>
+        <div class="card-meta">
+          <span>謙溢管理顧問</span>
+          <span>2026 年 6 月</span>
+          <span>閱讀約 6 分鐘</span>
+        </div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- 即將推出 2 -->
+    <div class="coming-soon">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-title">製造業官網怎麼做 SEO？從零開始的完整指南</div>
+        <div class="coming-soon-label">即將推出</div>
+      </div>
+    </div>
+
+    <!-- 即將推出 3 -->
+    <div class="coming-soon">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-title">什麼是 SOP？台灣中小企業老闆的標準作業流程建立指南</div>
+        <div class="coming-soon-label">即將推出</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-banner">
+    <h3>有特定想了解的主題？</h3>
+    <p>告訴我們你的困惑，我們會優先撰寫你最需要的內容，也提供免費 30 分鐘諮詢。</p>
+    <a href="https://joyicorp.com/contact.html" class="btn">聯絡我們</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 謙溢管理顧問 Joyi Corp｜<a href="https://joyicorp.com/" style="color:var(--gold);text-decoration:none;">joyicorp.com</a></p>
+</footer>
+
+</body>
+</html>

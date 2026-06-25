@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>台灣中小企業導入 AI 前，老闆必知的 5 個問題 | 謙溢管理顧問</title>
+  <meta name="description" content="許多台灣中小企業老闆對 AI 導入充滿期待，卻不知從何開始。本文整理 5 個最關鍵的問題，幫助你在導入前做好準備，避免走冤枉路。" />
+  <meta name="keywords" content="AI導入,台灣中小企業,數位轉型,AI顧問,謙溢管理顧問" />
+  <link rel="canonical" href="https://joyicorp.com/blog/ai-guide-for-sme.html" />
+  <meta property="og:title" content="台灣中小企業導入 AI 前，老闆必知的 5 個問題" />
+  <meta property="og:description" content="許多台灣中小企業老闆對 AI 導入充滿期待，卻不知從何開始。本文整理 5 個最關鍵的問題，幫助你在導入前做好準備。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://joyicorp.com/blog/ai-guide-for-sme.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2b4a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --bg: #f8f7f4;
+      --white: #ffffff;
+      --text: #2c2c2c;
+      --text-muted: #6b6b6b;
+      --border: #e2ddd6;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: var(--gold);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .05em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 64px 5% 56px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.4;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero-meta {
+      color: rgba(255,255,255,.55);
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .hero-meta span::before { content: ''; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 5% 80px;
+    }
+
+    /* ── Lead ── */
+    .lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 48px;
+      line-height: 1.9;
+    }
+
+    /* ── Question blocks ── */
+    .question-block {
+      margin-bottom: 56px;
+    }
+    .q-number {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .q-num-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .q-number h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .question-block p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .highlight-box {
+      background: #f0ece3;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: .95rem;
+      color: var(--navy);
+    }
+    .highlight-box strong { color: var(--gold); }
+
+    /* ── Divider ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── Summary table ── */
+    .summary-card {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 36px 40px;
+      margin: 56px 0;
+      color: var(--white);
+    }
+    .summary-card h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      letter-spacing: .05em;
+    }
+    .summary-list { list-style: none; }
+    .summary-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+    .summary-list li:last-child { border-bottom: none; }
+    .summary-list .num {
+      color: var(--gold);
+      font-weight: 700;
+      min-width: 24px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 48px 40px;
+      margin-top: 56px;
+    }
+    .cta-section h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: .95rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--gold-light); }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: .9rem;
+      margin-bottom: 32px;
+    }
+    .back-link:hover { opacity: .8; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 24px;
+      font-size: .8rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .summary-card { padding: 24px 20px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="https://joyicorp.com/" class="nav-logo">謙溢管理顧問</a>
+  <ul class="nav-links">
+    <li><a href="https://joyicorp.com/">首頁</a></li>
+    <li><a href="https://joyicorp.com/services.html">服務項目</a></li>
+    <li><a href="https://joyicorp.com/cases.html">成功案例</a></li>
+    <li><a href="https://joyicorp.com/blog/">知識庫</a></li>
+    <li><a href="https://joyicorp.com/contact.html">聯絡我們</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-tag">AI 導入指南</div>
+  <h1>台灣中小企業導入 AI 前<br>老闆必知的 5 個問題</h1>
+  <div class="hero-meta">
+    <span>謙溢管理顧問</span>
+    <span>2026 年 6 月</span>
+    <span>閱讀時間約 6 分鐘</span>
+  </div>
+</div>
+
+<!-- Article -->
+<div class="container">
+  <a href="https://joyicorp.com/blog/" class="back-link">← 返回知識庫</a>
+
+  <p class="lead">
+    「我也想用 AI，但不知道從哪裡開始。」<br>
+    這是我們在輔導台灣中小企業時，最常聽到的一句話。AI 工具日新月異，市面上的資訊又多又雜，很容易讓老闆感到不知所措。本文整理了 5 個最關鍵的問題，幫助你在正式導入 AI 之前，先想清楚方向。
+  </p>
+
+  <!-- Q1 -->
+  <div class="question-block">
+    <div class="q-number">
+      <div class="q-num-badge">1</div>
+      <h2>你想解決的是哪一個具體痛點？</h2>
+    </div>
+    <p>許多老闆導入 AI 的出發點是「聽說很厲害」，而不是「我有這個問題需要解決」。這樣的起點很容易導致花了錢、卻沒有實際效果。</p>
+    <p>AI 能幫你做的事很多，包括：自動回覆客戶詢問、整理會議記錄、生成行銷文案、分析銷售數據、輔助員工教育訓練等。但每一種工具對應的場景不同，沒有一個工具能解決所有問題。</p>
+    <div class="highlight-box">
+      <strong>建議行動：</strong>先列出公司目前最耗時、最容易出錯、或人力最缺乏的三個環節，再去找對應的 AI 工具，而不是反過來。
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Q2 -->
+  <div class="question-block">
+    <div class="q-number">
+      <div class="q-num-badge">2</div>
+      <h2>你的團隊準備好了嗎？</h2>
+    </div>
+    <p>AI 工具再好，也需要人來操作和判斷。很多企業導入失敗，不是因為工具不好，而是員工不會用、或是不願意用。</p>
+    <p>在台灣，許多中小企業的員工平均年齡偏高，或是日常工作已經很繁忙，對新工具的接受度因人而異。如果沒有配套的教育訓練和流程調整，AI 工具很可能只是多了一個沒人用的系統。</p>
+    <div class="highlight-box">
+      <strong>建議行動：</strong>導入前先做內部調查，找出對新技術接受度最高的 1–2 位員工作為「AI 種子人員」，讓他們先試用、再推廣給其他同事。
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Q3 -->
+  <div class="question-block">
+    <div class="q-number">
+      <div class="q-num-badge">3</div>
+      <h2>你的資料和流程夠整齊嗎？</h2>
+    </div>
+    <p>AI 的強項是處理大量資料、從中找出規律。但如果你的客戶資料散落在各種 Excel 檔案、LINE 對話紀錄、甚至紙本表格裡，AI 就很難發揮作用。</p>
+    <p>「垃圾進，垃圾出」（Garbage in, garbage out）是 AI 領域的鐵律。資料品質不好，AI 的判斷就不可靠。在導入 AI 之前，整理好資料和標準化流程，往往比選擇哪個 AI 工具更重要。</p>
+    <div class="highlight-box">
+      <strong>建議行動：</strong>先做一次「流程盤點」，把公司最重要的 3–5 個作業流程寫成 SOP，確保資料有統一的格式和存放位置，這是 AI 導入的基礎建設。
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Q4 -->
+  <div class="question-block">
+    <div class="q-number">
+      <div class="q-num-badge">4</div>
+      <h2>你打算花多少預算，期待多快看到成效？</h2>
+    </div>
+    <p>AI 導入的費用差距很大。免費工具如 ChatGPT 基本版，到月費幾千元的企業版工具，再到需要客製化開發的專案，動輒數十萬甚至百萬以上。</p>
+    <p>對台灣中小企業來說，建議從低成本、高回報的切入點開始，先快速驗證效益，再考慮是否加大投資。一開始就砸大錢買「全套解決方案」，風險很高。</p>
+    <div class="highlight-box">
+      <strong>建議行動：</strong>設定一個 3 個月的試驗期和小額預算（例如每月 3,000–10,000 元），選定一個具體場景導入，用數字評估效益後，再決定是否擴大。
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Q5 -->
+  <div class="question-block">
+    <div class="q-number">
+      <div class="q-num-badge">5</div>
+      <h2>你有沒有考慮過資安和法規風險？</h2>
+    </div>
+    <p>使用 AI 工具時，公司的內部資料、客戶資料很可能會被上傳到第三方伺服器。如果你的行業涉及個資（如醫療、金融、人資），或是有客戶合約要求資料保密，就必須特別謹慎。</p>
+    <p>台灣的《個人資料保護法》和即將強化的相關法規，都對企業如何處理個資有明確規定。盲目使用免費 AI 工具輸入客戶資料，可能帶來法律風險。</p>
+    <div class="highlight-box">
+      <strong>建議行動：</strong>導入前確認 AI 工具的資料處理政策，避免將客戶個資、合約內容等敏感資訊輸入未經評估的工具。企業版工具通常有更嚴格的資安保障，值得評估。
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-card">
+    <h3>📋 五個問題快速回顧</h3>
+    <ul class="summary-list">
+      <li><span class="num">1</span><span>你想解決的是哪一個具體痛點？先找問題，再找工具。</span></li>
+      <li><span class="num">2</span><span>你的團隊準備好了嗎？找出種子人員，配套教育訓練。</span></li>
+      <li><span class="num">3</span><span>你的資料和流程夠整齊嗎？先建 SOP，再談 AI。</span></li>
+      <li><span class="num">4</span><span>預算和期待是否合理？小額試驗，驗證後再擴大。</span></li>
+      <li><span class="num">5</span><span>資安和法規風險有沒有考慮到？個資保護不可輕忽。</span></li>
+    </ul>
+  </div>
+
+  <p style="color:var(--text-muted); font-size:.95rem; line-height:1.9;">
+    AI 導入沒有標準答案，每家企業的狀況不同，適合的切入點也不一樣。重要的是：不要因為「別人都在用」而盲目跟進，也不要因為「感覺很複雜」而完全迴避。先想清楚這 5 個問題，你就已經比大多數老闆走在前面了。
+  </p>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>想知道 AI 導入對你的公司適不適合？</h3>
+    <p>謙溢提供免費 30 分鐘諮詢，幫助你評估現況、找出最適合的切入點，不推銷、不套裝，只給你真正需要的建議。</p>
+    <a href="https://joyicorp.com/contact.html" class="btn">預約免費諮詢</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 謙溢管理顧問 Joyi Corp｜<a href="https://joyicorp.com/" style="color:var(--gold);text-decoration:none;">joyicorp.com</a></p>
+</footer>
+
+</body>
+</html>
